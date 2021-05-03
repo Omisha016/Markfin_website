@@ -118,3 +118,11 @@ footer{
 .contactus{
     font-size: 30px;
 }
+ .icons{
+    height: 19px;
+    width: 19px;
+    display: block;
+    float: left;
+    margin-left: 16px;
+    margin-top: -17px;
+}
