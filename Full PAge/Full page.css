@@ -50,56 +50,73 @@ table {
 
 
 /* NAV */
-.navbar li{
+header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e5e5;
+    height: 25vh;
+  }
+  header > h1 {
+    color: #fff;
+    font-size: 100px;
+    text-shadow: 3px 5px 0 rgb(0 0 0 / 20%);
+  }
+  nav#navbar {
+    background: #000000;
+    top: 0;
+    position: relative;
+    width: 100%;
+    transition: all 0.5s linear;
+    z-index: 1;
+  }
+  ul.menu-list {
+    display: flex;
     list-style: none;
-    float: right;
-    margin-top: 18px ;
-    margin-bottom: 13px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-}
-.navbar a{
-    text-decoration: none;
-    color:white;
-    padding: 3px 13px ;
-    display: block;
-   
-}
-.navbar a:hover{
-    color: #FCA311;
-}
-.navbar ul{
-   overflow:hidden;
-} 
-.navbar
-{
-    background-color: black;
+  }
+  ul.menu-list li {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0;
+  }
+  ul.menu-list li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: #000;
+    transition: all 0.5s linear;
+  }
+  .logo > a > img {
+    max-width: 80px;
+  }
+  ul.menu-list li > a {
+    text-decoration: unset;
+    display: flex;
+    color: #fff;
+    transition: 0.2s linar;
+    text-transform: uppercase;
+  }
+  body.fixed-nav nav#navbar {
     position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 65px;
-}
-img{
-    height: 63px;
-    display: block;
-    float: left;
-    margin-left: 53px;
-    margin-top: 1px;
-}
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+  }
+  body.fixed-nav li.logo {
+    max-width: 300px;
+  }
 
 /* CARDS */
 .department {
     width:100%;
-    height:100%;
+    height:50rem;
     padding:100px 0;
     background-color: #E5E5E5;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     transition: all 0.5s ease-in-out; 
@@ -108,17 +125,18 @@ img{
 .department button {    
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     color: #14213D;
     font-size: 30px;
     font-family:monospace;
     margin: 50px;
-    width: 250px;
-    height: 320px;
+    width: 280px;
+    height: 350px;
     border-radius: 5px;
     box-shadow: 2px 6px 5px #8d99ae;
     border: 2px #14213D solid;
     padding: 150px 100px;
-    transition-property: transform, letter-spacing, font-size;
+    transition-property: transform, letter-spacing, font-size, filter;
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
     /* transition: trasnform,font-size 0.1s ease-in; 
@@ -137,42 +155,59 @@ img{
 button:hover{
     transform: scale(1.1);
     
-    /* filter: invert(100%); */
     box-shadow: 4px 8px 10px #8d99ae;
     letter-spacing: 2px;
     font-size: 32px;
-    color: #fca311;
+    color: #000;
     border: 2px #000 solid;
     cursor: pointer;
-    backdrop-filter: blur(5px);
+    filter: brightness(110%);
 }
 
 /* NEWS */
-.news{
-    background-color:#E5E5E5 ;
+#news-section{
+    background-color: #696969;
     text-align: center;
-    font-size: 50px;
-    height: 400px;
-    border-top:solid black 2px;
-    border-bottom:solid black 2px;
-}
-
-.news p{
-    font-size: 20px;
-}
+    padding: 8% 21%;
+  
+  }
+  .news1-img{
+    height: 300px;
+    width: 300px;
+    padding-top: 7%;
+  }
+  .news1-head{
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .news2-img{
+  height: 300px;
+  width: 300px;
+  padding-top: 7%;
+  }
 
 /* EVENTS */
-.events{
-    background-color:#E5E5E5 ;
+#event-section{
+    background: url(Marketing.jpg) no-repeat center center/cover ;
     text-align: center;
-    font-size: 50px;
-    height: 400px;
-    border-bottom:solid black 2px;
-}
-
-.events p{
-    font-size: 20px;
-}
+    padding: 8% 21%;
+  }
+  .event1-img{
+    height: 300px;
+    width: 300px;
+    padding-top: 7%;
+  }
+  .event1-head{
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .event2-img{
+  height: 300px;
+  width: 300px;
+  padding-top: 7%;
+  }
 
 
 /* ABOUT US */
@@ -199,16 +234,19 @@ button:hover{
     
 }
 
-#content{
+.cont p{
+    margin-right: 150px;
+    margin-top: 50px;
     font-size: 15px;
     line-height: 1.5;
     padding-bottom: 30px;
-    margin-right: 240px;
 }
 
 
 
-.logo {
+
+
+.log {
     margin-top: 40px;
     margin-left: 150px;
     margin-right: 60px;
@@ -245,6 +283,7 @@ button:hover{
 .team li{
     padding: 0px 100px;
     padding-bottom: 40px;
+    
 }
 
 .team ul{
@@ -256,6 +295,17 @@ button:hover{
     flex-wrap: wrap;
 }
 
+
+.team img{
+    height: 240px;
+    width: 200px;
+    
+    border: 2px #14213D solid;
+    border-radius: 2%;
+    box-shadow: 0 0 5px #14213D;
+    transition: all .5s;
+}
+
 .team h3{
     text-align: center;
     transition:transform 0.1s;
@@ -264,36 +314,39 @@ button:hover{
     font-style: normal;
     color: black;
     text-decoration: none;
-    /* transition:all 1s; */
+    transition: all .5s;
 }
 
-.team h3:hover{
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    color: #fca311;
-    cursor: pointer;
-    transform: scaleX(1.1);
-}
 
 .team h4{
     text-align: center;
     font-size: 20px;
     font-family: monospace;
     color: #6c757d;
-    /* padding-bottom: 20px; */
+    transition: all .5s;
+    /* position: relative; */
 }
 
-.team img{
-    height: 240px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    border: 2px #14213D solid;
-    border-radius: 2%;
-    box-shadow: 0 0 5px #14213D;
+.team .hover:hover h3{
+    color: #d9e2f6;
+    cursor: pointer;
+    transform: scaleX(1.1) translateY(-200%);
 }
 
-/* footer */
+.team .hover:hover h4{
+    transform: scale(1.1) translateY(-300%);
+    color: #c1c1c1;
+}
+
+.team .hover:hover img{
+    transform:  translateY(5%);
+    filter: brightness(80%);
+}
+
+
+
+/*   FOOTER    */
+
 footer{
     height:412px;
     width: 100%;
