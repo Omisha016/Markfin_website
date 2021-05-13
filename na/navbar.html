@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animated Sticky Nav</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Marketing and Investment Cell</h1>
+  </header>
+  <nav id="navbar">
+    <ul class="menu-list">
+      <li class="logo"><a href="#"><img src="logo.png" alt="logo"></a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">Calculators</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+  <script>
+    const nav = document.querySelector("#navbar");
+    const NavTop = nav.offsetTop;
+
+    function fixnavbar(){
+      if(window.scrollY >= NavTop){
+        document.body.style.paddingTop = nav.offsetHeight + "px";
+        document.body.classList.add("fixed-nav");
+      }else {
+        document.body.style.paddingTop = 0;
+        document.body.classList.remove("fixed-nav");
+      }
+    }
+    window.addEventListener("scroll", fixnavbar);
+  </script>
+</body>
+</html>
